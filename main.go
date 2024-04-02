@@ -14,7 +14,7 @@ func main() {
     router := gin.Default()
 
     // Serve static files (HTML, CSS, JS)
-    router.Static("/static", "./static")
+    router.Static("/", "./static")
 
             matches, err := filepath.Glob(filepath.Join("static", "images", "baked_goods_*.jpeg"))
         if err != nil {
