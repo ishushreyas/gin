@@ -16,7 +16,7 @@ func main() {
     // Serve static files (HTML, CSS, JS)
     router.Static("/", "./static")
 
-    images := []string{"image1.jpg", "image2.jpg", "image3.jpg"}
+    //images := []string{"image1.jpg", "image2.jpg", "image3.jpg"}
 
     // Define routes
     router.GET("/", func(c *gin.Context) {
