@@ -16,26 +16,12 @@ func main() {
     // Serve static files (HTML, CSS, JS)
     router.Static("/", "./static")
 
-            matches, err := filepath.Glob(filepath.Join("static", "images", "baked_goods_*.jpeg"))
-        if err != nil {
-                log.Printf("Error loading baked goods images: %v", err)
-        }
-        var page = &Page{Images: make([]string, len(matches))}
-        for i, match := range matches {
-                page.Images[i] = filepath.Base(match)
-        }
-        switch r.URL.Path {
-        case "/":
-                err = tmpl.Execute(w, page)
-                if err != nil {
-                        log.Printf("Template execution error: %v", err)
-                }
-        }
+            images := []string{"image1.jpg", "image2.jpg", "image3.jpg"}
 
     // Define routes
     router.GET("/", func(c *gin.Context) {
         c.HTML(http.StatusOK, "index.html", gin.H{
-            "Images": "image1.jpg",
+            "Images": images,
         })
     })
 
