@@ -9,15 +9,12 @@ func main() {
     // Initialize Gin router
     router := gin.Default()
 
-    // Load HTML templates
-    router.LoadHTMLGlob("templates/*")
+    // Serve static files (HTML, CSS, JS)
+    router.Static("/static", "./static")
 
-    // Define route handlers
+    // Define routes
     router.GET("/", func(c *gin.Context) {
-        // Render HTML template
-        c.HTML(http.StatusOK, "index.tmpl", gin.H{
-            "title": "Shreyas",
-        })
+        c.HTML(http.StatusOK, "index.html", gin.H{})
     })
 
     // Start server
