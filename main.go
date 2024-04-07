@@ -5,10 +5,6 @@ import (
     "github.com/gin-gonic/gin"
 )
 
-type Page struct {
-        Images []string
-}
-
 func main() {
     // Initialize Gin router
     router := gin.Default()
