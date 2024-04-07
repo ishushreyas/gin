@@ -1,9 +1,23 @@
 package main
 
 import (
-    "net/http"
+            "context"
+        "flag"
+        "fmt"
+        "html/template"
+        "io"
+        "log"
+        "net/http"
+        "os"
+        "path/filepath"
+
+        "github.com/google/generative-ai-go/genai"
+        "google.golang.org/api/iterator"
+        "google.golang.org/api/option"
     "github.com/gin-gonic/gin"
 )
+
+var apiKey = "AIzaSyBKLT-XRD7a0owyqqOIpsJjkU1SIlIHfO0"
 
 func generateHandler(w http.ResponseWriter, r *http.Request, model *genai.GenerativeModel) {
         if apiKey == "TODO" {
