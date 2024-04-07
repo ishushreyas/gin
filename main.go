@@ -10,8 +10,8 @@ func main() {
     router := gin.Default()
 
     // Serve static files (HTML, CSS, JS)
-    router.LoadHTMLGlob("static/*")
-    //router.Static("/static", "./static")
+    //router.LoadHTMLGlob("static/*")
+    router.Static("/static", "./static")
 
     images := []string{"image1.jpg", "image2.jpg", "image3.jpg"}
 
