@@ -11,14 +11,14 @@ import (
         "os"
         "path/filepath"
 
-        "github.com/google/generative-ai-go/genai"
-        "google.golang.org/api/iterator"
-        "google.golang.org/api/option"
+       // "github.com/google/generative-ai-go/genai"
+       // "google.golang.org/api/iterator"
+      //  "google.golang.org/api/option"
     "github.com/gin-gonic/gin"
 )
 
 var apiKey = "AIzaSyBKLT-XRD7a0owyqqOIpsJjkU1SIlIHfO0"
-
+/*
 func generateHandler(w http.ResponseWriter, r *http.Request, model *genai.GenerativeModel) {
         if apiKey == "TODO" {
                 http.Error(w, "Error: To get started, get an API key at https://makersuite.google.com/app/apikey and enter it in cmd/web/main.go and then hard restart the preview", http.StatusInternalServerError)
@@ -56,7 +56,7 @@ func generateHandler(w http.ResponseWriter, r *http.Request, model *genai.Genera
                         }
                 }
         }
-}
+}*/
 
 func main() {
     // Initialize Gin router
@@ -75,7 +75,7 @@ func main() {
         })
     })
 
-    router.POST("/api/generate", func(w http.ResponseWriter, r *http.Request) { generateHandler(w, r, model) })
+    router.POST("/api/generate", func(w http.ResponseWriter, r *http.Request) { /*generateHandler(w, r, model) */})
 
     // Start server
     router.Run()
