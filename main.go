@@ -4,7 +4,7 @@ import "github.com/gin-gonic/gin"
 
 func main() {
 	r := gin.Default()
-	r.LoadHTMLFiles("/templates/index.tmpl.html")
+	r.LoadHTMLFiles("./templates/")
 	r.Static("/static", "./static")
 	r.GET("/index", func(c *gin.Context) {
 		images := []string{"image1.jpg", "image2.jpg", "image3.jpg"}
