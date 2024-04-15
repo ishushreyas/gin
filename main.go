@@ -9,7 +9,7 @@ func main() {
 	r.GET("/index", func(c *gin.Context) {
 		images := []string{"image1.jpg", "image2.jpg", "image3.jpg"}
 		c.HTML(200, "index.tmpl.html", gin.H{
-			"images": images,
+			"Images": images,
 		})
 	})
 	r.GET("/ping", func(c *gin.Context) {
