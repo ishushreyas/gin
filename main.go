@@ -7,7 +7,7 @@ func main() {
 	r.LoadHTMLFiles("/templates/index.tmpl.html")
 	r.GET("/index", func(c *gin.Context) {
 		c.HTML(200, "index.tmpl.html", gin.H{
-			"message": "pong",
+			"image": string[]{"image1.jpg", "image2.jpg", "image3.jpg"},
 		})
 	})
 	r.GET("/ping", func(c *gin.Context) {
