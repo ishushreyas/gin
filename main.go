@@ -5,8 +5,13 @@ import "github.com/gin-gonic/gin"
 func main() {
 	r := gin.Default()
 	r.LoadHTMLFiles("/templates/index.tmpl.html")
+	r.GET("/index", func(c *gin.Context) {
+		c.HTML(200, "index.tmpl.html", gin.H{
+			"message": "pong",
+		})
+	})
 	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, "index.tmpl.html", gin.H{
+		c.JSON(200, gin.H{
 			"message": "pong",
 		})
 	})
